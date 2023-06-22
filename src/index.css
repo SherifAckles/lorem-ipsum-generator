@@ -142,3 +142,16 @@ p {
   background: var(--clr-primary-8);
   border-color: var(--clr-primary-8);
 }
+
+/* section */
+.section {
+  padding: 5rem 0;
+}
+
+.section-center {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 40rem;
+  margin-top: 5rem;
+  text-align: center;
+}
