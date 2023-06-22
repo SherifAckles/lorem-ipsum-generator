@@ -5,9 +5,49 @@ const App = () => {
  const [count, setCount] = useState(0);
  const [errorMessage, setErrorMessage] = useState("");
   
+  const handleSubmit = (e) => {
+    e.preventDefault
+    console.log('got submitted')
+    let amount = parseInt(count);
+    if (amount <= 0 ) {
+      setErrorMessage("Please select a valid number");
+      
+      return; // Exit the function if the amount is 0 or negative
+    }
+    if (amount > 10) {
+      amount = 10;
+    }
+    setText(data.slice(0, amount));
+    setCount(0);
+    setErrorMessage(""); // Reset the error message
+  };
+  }
+  
   return (
-    <div>App</div>
-  )
+    <section className="section-center">
+      <h2>Lorem ipsum generator</h2>
+      <form className="lorem-form" onSubmit={handleSubmit}>
+        <label htmlFor="amount">paragraphs:</label>
+        <input
+          type="number"
+          name="amount"
+          id="amount"
+          value={count}
+          onChange={(e) => setCount(e.target.value)}
+        />
+        <button type="submit" className="btn">
+          Generate
+        </button>
+      </form>
+      <p className="error-message">{errorMessage}</p>
+
+      <article className="lorem-text">
+        {text.map((item, i) => {
+          return <p key={i}>{item}</p>;
+        })}
+      </article>
+    </section>
+  );
 }
 
 export default App
