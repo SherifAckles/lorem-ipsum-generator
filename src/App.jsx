@@ -1,17 +1,16 @@
-import { useState } from "react"
-import data from './data'
-const App = () => {
- const [text, setText] = useState([]);
- const [count, setCount] = useState(0);
- const [errorMessage, setErrorMessage] = useState("");
-  
+import React, { useState } from "react";
+import data from "./data";
+function App() {
+  const [text, setText] = useState([]);
+  const [count, setCount] = useState(0);
+  const [errorMessage, setErrorMessage] = useState("");
+
   const handleSubmit = (e) => {
-    e.preventDefault
-    console.log('got submitted')
+    e.preventDefault();
     let amount = parseInt(count);
-    if (amount <= 0 ) {
+    if (amount <= 0) {
       setErrorMessage("Please select a valid number");
-      
+
       return; // Exit the function if the amount is 0 or negative
     }
     if (amount > 10) {
@@ -21,11 +20,10 @@ const App = () => {
     setCount(0);
     setErrorMessage(""); // Reset the error message
   };
-  }
-  
+
   return (
     <section className="section-center">
-      <h2>Lorem ipsum generator</h2>
+      <h2>Lorem Ipsum generator</h2>
       <form className="lorem-form" onSubmit={handleSubmit}>
         <label htmlFor="amount">paragraphs:</label>
         <input
@@ -50,4 +48,4 @@ const App = () => {
   );
 }
 
-export default App
+export default App;
