@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import data from "./data";
 function App() {
   const [text, setText] = useState([]);
