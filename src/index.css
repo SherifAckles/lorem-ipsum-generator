@@ -205,3 +205,10 @@ button {
 .result {
   margin-bottom: 2rem;
 }
+/* styles for the error msg */
+/* ================================ */
+.error-message {
+  color: red;
+  margin-top: 5px;
+}
+/* ================================ */
